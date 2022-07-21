@@ -1,0 +1,54 @@
+### api test
+GET http://localhost:8000
+
+
+# APIs
+
+
+###User Login
+
+
+### post new user
+POST  http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+     "fName": "Prem",
+    "lName": "Acharya",
+    "email": "a@a.com",
+    "password": "123456"
+}
+
+
+### post new user
+POST  http://localhost:8000/api/v1/user/login
+Content-Type: application/json
+
+{
+   
+    "email": "a@a.com",
+    "password": "123456"
+}
+
+
+
+#========= transaction apis
+###post new transaction
+
+
+POST  http://localhost:8000/api/v1/transaction
+Content-Type: application/json
+
+{
+   "userId":"62d8989a97868a45b0a3a631"
+    "type": "Income",
+    "title": "working",
+    "amount":100
+}
+
+
+###get all transaction for the specific user based
+
+GET http://localhost:8000/api/v1/transaction
+
+Authorization: 62d8989a97868a45b0a3a631
