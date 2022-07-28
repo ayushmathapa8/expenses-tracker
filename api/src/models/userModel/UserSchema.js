@@ -1,35 +1,33 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
-    status:{
-        type:String,
-        default:"inactive",
+const userSchema = new mongoose.Schema(
+  {
+    status: {
+      type: String,
+      default: "inactive",
     },
-    fName:{
-        type :String,
-        required:true,
-
+    fName: {
+      type: String,
+      require: true,
     },
-email:{
-        type :String,
-        required:true,
-        unique:true,
-        index:1
+    lName: {
+      type: String,
+      require: true,
+    },
+    email: {
+      type: String,
+      require: true,
+      unique: true,
+      index: 1,
+    },
+    password: {
+      type: String,
+      require: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-},
-
-
-password:{
-    type :String,
-    required:true,
-   
-},
-},
-
-{
-    timestamps:true
-},
-
-)
-
-export  default mongoose.model("User", userSchema);
+export default mongoose.model("User", userSchema);
