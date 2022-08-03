@@ -20,13 +20,13 @@ import transactionRouter from "./src/routers/transactionRouter.js";
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/transaction", transactionRouter);
 
-const _dirname = path.resolve();
-app.use(express.static(path.join(_dirname, "/client/build")));
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/clients/build")));
 
 // Server side rendering
 app.use("/", (req, res, next) => {
   try {
-    res.sendFile(path.join(_dirname, "/client/build/index.html"));
+    res.sendFile(path.join(__dirname, "/clients/build/index.html"));
   } catch (error) {
     next(error);
   }
