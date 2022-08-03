@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useAccordionButton } from "react-bootstrap";
-const rootUrl = "http://localhost:8000";
+const rootUrl =
+  process.env.NODE_ENV !== "production" ? "" : "http:localhost//8000";
 const userEP = rootUrl + "/api/v1/user";
 const transactionEP = rootUrl + "/api/v1/transaction";
 
